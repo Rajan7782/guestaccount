@@ -9,7 +9,7 @@ app = FastAPI(title="Account Creator API", version="1.0.0")
 def generate_account(region: str, index: int):
     name = f"RRAJAN{''.join(random.choices(string.ascii_uppercase + string.digits, k=3))}"
     uid = random.randint(4200000000, 4299999999)
-    password = f"BNGX_VIP{''.join(random.choices(string.ascii_uppercase + string.digits, k=12))}"
+    password = f"RRAJAN_VIP{''.join(random.choices(string.ascii_uppercase + string.digits, k=12))}"
     return {
         "name": name,
         "uid": uid,
@@ -33,3 +33,4 @@ def create_account(
 
     accounts = [generate_account(region, i) for i in range(count)]
     return {"status": "success", "count": count, "accounts": accounts}
+
